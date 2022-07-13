@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+<!-- LINK TO FONT AWESOME ICONS  -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.3.1/css/all.min.css" integrity="sha512-KulI0psuJQK8UMpOeiMLDXJtGOZEBm8RZNTyBBHIWqoXoPMFcw+L5AEo0YMpsW8BfiuWrdD1rH6GWGgQBF59Lg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- LINK TO CUSTOM CSS FILE -->
+<link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+
+<main class="container" id="container">
+<div class="top__container">
+<div class="top__cover">
+  <div class="top__container--heading">
+    <h1 class="heading">TODO</h1>
+    <button class="btn"><i class="fas fa-moon icon"></i></button>
+  </div>
+  <div class="top__container--inputBox">
+    <input type="text" id="input" placeholder="add new item">
+    <button class="add--btn">
+      <i class="fas fa-plus-square"></i>
+    </button>
+  </div>
+</div>
+</div>
+
+<div class="bottom__container">
+  <div class="lower__cover">
+    <div class="list__container">
+      <ul class="lists"></ul>
+    </div>
+    <div class="filter__container">
+      <div class="filter__items">
+        <span class="filter__items--left"><span id="left">0</span> items left</span>
+      </div>
+      <div class="filter__options item--filter one">
+        <span href="#" class="filter__options--items">All</span>
+        <span href="#" class="filter__options--items">Active</span>
+        <span href="#" class="filter__options--items completedShow">Completed</span>
+      </div>
+      <div class="filter__completed">
+        <span class="filter__completed--clear">Clear Completed</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="filter__options--special item--filter two">
+    <span href="#" class="filter__options--items">All</span>
+    <span href="#" class="filter__options--items">Active</span>
+    <span href="#" class="filter__options--items completedShow">Completed</span>
+  </div>
+
+
+  <footer class="footer">
+    <p>Drag and Drop to re-order the List</p>
+  </footer>
+</div>
+</main>
+  <script src="./js/script.js"></script>
+</body>
+</html>

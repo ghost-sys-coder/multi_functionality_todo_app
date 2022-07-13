@@ -1,0 +1,376 @@
+/* Import Google Fonts -- Josefin Sans 400, 500, 600, 700 */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&display=swap');
+
+/* CSS Variables */
+:root {
+    /* primary Colors */
+    --brightBlue: hsl(220, 98%, 61%);
+    --checkBackground: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --whiteColor: #fff;
+    --blackColor: #000;
+
+    --box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+    --inputBox-color: var(--whiteColor);
+    --lowerCover-color: var(--whiteColor);
+    --trashIcon-color: var(--darkGrayishBlue);
+    --listText-color: var(--veryDarkDesaturatedBlue);
+    --filter-options-completed-text: var(--veryDarkGrayishBlue);
+    --filter-options-color:var(--veryDarkBlue);
+
+    /* Light Theme */
+
+    --veryLightGray: hsl(0, 0%, 98%);
+    --veryLightGrayishBlue: hsl(236, 33%, 92%);
+    --lightGrayishBlue: hsl(233, 11%, 84%);
+    --darkGrayishBlue: hsl(236, 9%, 61%);
+    --veryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+    --topBackground-image: url('/images/bg-desktop-light.jpg');
+
+    /* Dark Theme */
+    --veryDarkBlue: hsl(235, 21%, 11%);
+    --veryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+    --lightGrayishBlue: hsl(234, 34%, 85%);
+    --lightGrayishBlue-hover: hsl(236, 33%, 92%);
+    --darkGrayishBlue: hsl(234, 11%, 52%);
+    --veryDarkGrayishBlue: hsl(233, 14%, 35%);
+    --veryDarkGrayishBlue-hover: hsl(237, 14%, 26%);
+}
+
+/* General Styles Start */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    list-style: none;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    font-size: 18px;
+    font-family: 'Josefin sans', sans-serif;
+}
+
+.container {
+    height: 100vh;
+    background: var(--checkBackground);
+    transition: all 0.4s ease;
+}
+
+/* General Styles End */
+
+/* Theme Styles Start */
+.top__container {
+    height: 40vh;
+    background-image: var(--topBackground-image);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top__cover {
+    width: 90%;
+    max-width: 500px;
+}
+
+.top__container--heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.top__container--heading .heading {
+    color: var(--whiteColor);
+}
+.top__container--heading button {
+    background-color: transparent;
+    border: none;
+}
+.top__container--heading button .icon {
+    color: var(--whiteColor);
+    font-size: 2rem;
+    cursor: pointer;
+}
+.top__container--inputBox {
+    min-height: 50px;
+    border: 1px solid silver;
+    padding: 0.2rem;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.top__container--inputBox input {
+    background-color: var(--inputBox-color);
+    height: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    padding: 1rem;
+    border-radius: 5px;
+
+}
+.add--btn {
+    position: absolute;
+    right: 0;
+    margin-right: 10px;
+    margin-top: 5px; margin-bottom: 5px;
+    font-size: 2rem;
+    padding: .5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* LOWER SECTION STYLES START */
+
+.bottom__container {
+    height: 60vh;
+    background-color: var(--veryLightGray);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lower__cover {
+    transform: translateY(-35%);
+    height: 70%;
+    background-color: var(--lowerCover-color);
+    box-shadow: var(--box-shadow);
+    width: 90%;
+    max-width: 500px;
+    border-radius: 5px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.list__container {
+    height: calc(90%);
+    width: 100%;
+}
+
+ul.lists {
+    height: 100%;
+    overflow-y: auto;
+}
+
+ul.lists::-webkit-scrollbar {
+    display: none;
+}
+.lists {
+    -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+
+
+ul.lists > div {
+    min-height: 50px;
+    border-bottom: 1px solid silver;
+    padding-left: 1rem;
+    font-size: 1.4rem;
+    color: var(--veryDarkGrayishBlue);
+    cursor: pointer;
+}
+li {
+    color: var(--listText-color);
+}
+.todo--item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 1rem;
+}
+.todo--item:hover {
+    transform: translateY(4px);
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.4);
+    border: none;
+}
+.todo--item div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    margin: 1rem 0;
+}
+.trash-icon {
+    color: var(--trashIcon-color);
+    transition: all 0.4s ease;
+    margin-left: 1rem;
+}
+.trash-icon:hover {
+    transform: scale(1.4);
+    color: var(--brightBlue)
+}
+.list--item {
+    text-transform: capitalize;
+}
+.fa-trash {
+    display: flex;
+    flex: 1;
+}
+input[type="radio"] {
+    cursor: pointer;
+}
+
+
+
+
+.filter__container {
+    height: calc(10%);
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+.filter__container span {
+    text-decoration: none;
+}
+.filter__items > span , .filter__completed > span {
+    color: var(--filter-options-completed-text);
+    opacity: 0.3;
+}
+
+.filter__items > span:hover , 
+.filter__completed > span:hover {
+    text-decoration: underline;
+}
+.filter__options span {
+    color: var(--filter-options-color);
+    cursor: pointer;
+}
+.filter__options > span:hover {
+    color: blue;
+}
+
+/* FILTER OPTIONS SPECIAL */
+.filter__options--special {
+    transform: translateY(-150%);
+    width: 90%;
+    max-width: 500px;
+    height: 50px;
+    background-color: var(--whiteColor);
+    box-shadow: var(--box-shadow);
+    border-radius: 5px;
+    color: blue;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+/* FOOTER SECTION STYLES */
+.footer {
+    transform: translateY(100%);
+    color: var(--darkGrayishBlue);
+}
+.footer:hover {
+    color: blue;
+    transform: translateX(20px);
+}
+.filter__options--special {
+    display: none;
+}
+.filter__options--special a {
+    text-decoration: none;
+}
+.filter__options--special a:hover {
+    color: blue;
+}
+
+@media only screen and (max-width: 480px) {
+    .filter__options {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .filter__options--special {
+        display: flex;
+        background-color: var(--filter--special);
+    }
+    .filter__options--special a {
+        color: var(--filter--options-special);
+    }
+    .top__container--inputBox {
+        margin-bottom: 3rem;
+    }
+    .footer p {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .footer {
+        font-size: 80%;
+    }
+}
+
+
+
+/* DARK THEME STYLES START */
+.changeTheme {
+    --topBackground-image: url('/images/bg-desktop-dark.jpg');
+    --veryLightGray: #000;
+    --inputBox-color: var(--veryDarkBlue);
+    --lowerCover-color: var(--veryDarkBlue);
+    --trashIcon-color: var(--whiteColor);
+    --listText-color: var(--whiteColor);
+    --filter-options-completed-text: var(--whiteColor);
+    --filter-options-color: blue;
+    --filter--special: var(--veryDarkBlue);
+    --filter--options-special: var(--whiteColor) ;
+}
+
+
+.success {
+    background-color: var(--brightBlue);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: var(--whiteColor);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+.error {
+    background-color: red;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: var(--whiteColor);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
+
+.completed {
+    text-decoration: line-through;
+}
